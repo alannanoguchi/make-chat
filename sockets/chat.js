@@ -27,5 +27,11 @@ module.exports = (io, socket, onlineUsers) => {
         delete onlineUsers[socket.username]
         io.emit('user has left', onlineUsers);
     });
+
+    socket.on('logout', () => {
+        delete onlineUsers[socket.username];
+        console.log(`✋ ${username} has logged out of the chat! ✋`)
+        io.emit('user logged out', onlineUsers);
+    })
   
 }

@@ -32,6 +32,13 @@ $(document).ready(()=>{
         $('#chat-input').val("");
       }
     });
+
+    $("#logout-btn").click((e) => {
+        e.preventDefault();
+        socket.emit("logout user", currentUser);
+        $(".username-form").css("display", "flex"); // return to login page after logging out
+        $(".main-container").css("display", "none");
+    });
   
     //socket listeners
     socket.on('new user', (username) => {
