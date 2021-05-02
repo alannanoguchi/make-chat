@@ -51,7 +51,7 @@ $(document).ready(()=>{
           socket.emit('new channel', newChannel);
           $('#new-channel-input').val("");
         }
-      });
+    });
 
     $("#logout-btn").click((e) => {
         e.preventDefault();
